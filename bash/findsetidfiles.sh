@@ -19,15 +19,27 @@
 # use the find command to generate the list of files with their sizes, with an error redirect to /dev/null
 # use cut or awk to display only the output desired
 
+#This is the original script however sort has been updated to organize by column 5 (sorted by owner)
 
 echo "Setuid files:"
 echo "============="
 find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 5
 echo ""
+
+# this script finds and displays the setgid files in a second listing
+# The find command is used to find files of the right type and with the right permissions, and errors redirect to /dev/null
+# the identified files should be sorted by their group
+
 echo "Setgid files:"
 echo "============="
 find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 6
 echo ""
+
+# This script displays the 10 largest regular files in the system, sorted by their sizes
+# It lists only the file name, owner, and size in MBytes
+# The find command generates the list of files with their sizes, with an error redirect to /dev/null
+# The awk command is used to display only the output desired
+
 echo "10 largest files:"
 echo "================="
 find / -type f -exec ls -l --block-size=M {} + 2>/dev/null | sort -nrk 5 | head -n 10 | awk '{print $5,"  ",$3,"  ",$9}'
