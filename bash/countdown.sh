@@ -108,4 +108,4 @@ while [ $sleepCount -gt 0 ]; do
   fi
 done
 
-echo "Wait counter expired, exiting peacefully"
+echo "Wait counter expired, exiting peacefully" 
