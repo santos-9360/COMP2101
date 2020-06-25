@@ -55,8 +55,8 @@ EOF
 
 # the second part of the output generates a per-interface report
 # the task is to change this from something that runs once using a fixed value for the interface name to
-#   a dynamic list obtained by parsing the interface names out of a network info command like "ip"
-#   and using a loop to run this info gathering section for every interface found
+# a dynamic list obtained by parsing the interface names out of a network info command like "ip"
+# and using a loop to run this info gathering section for every interface found
 
 # the default version uses a fixed name and puts it in a variable
 #####
