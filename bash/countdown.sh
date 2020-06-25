@@ -13,13 +13,13 @@ sleepTime=1 # delay used by sleeptime
 numberOfSleeps=10 # how many sleeps to wait for before quitting for inactivity
 
 #### Functions
-# created the exit function
+# the exit function, used to exit the countdown early
 function quit {
   echo "Secret exit found."
   exit 0
 }
 
-# created the interrupt function
+# the interrupt function, used to detect an INT and restart the countdown loop
 function interrupt {
   echo "You are not allowed to interrupt the countdown."
   restart=1
