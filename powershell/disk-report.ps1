@@ -12,3 +12,4 @@ format-table -autosize DeviceID,
     @{n="Free(GB)"; e={$_.freespace/1gb -as [int]}},
     @{n="% Free"; e={100*$_.freespace/$_.size -as [int]}},
     ProviderName
+#My drives do not have a Provider Name associated to them.
