@@ -1,8 +1,9 @@
 ﻿""
 #####HW#####
 "### HW ###"
-# NOT DONE YET
-$HW=get-wmiobject -class win32_computersystem
+# Lists HW information and trims output.
+$HW=get-wmiobject -class win32_computersystem |
+    Format-List Manufacturer, Model, Name
 ($HW | Out-String).trim()
 ""
 
@@ -64,7 +65,8 @@ $RAM=get-wmiobject -class win32_physicalmemory |
 
 #####STORAGE#####
 "### STORAGE ###"
-# COMMENT NEEDED
+# Get related information from other classes to use in created object,
+#formats on table and trims the output.
 $logical = get-wmiobject -class win32_logicaldisk
 
 $myDrives = foreach ($disk in $logical) {
